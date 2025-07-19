@@ -1,7 +1,6 @@
 "use client";
 
-import Dashboard from "@/app/(home)/dashboard/page";
-import { Button } from "@/components/ui/button";
+import { Dashboard } from "@/components/dashboard";
 import { supabase } from "@/lib/supabase";
 
 const user = {
@@ -25,10 +24,10 @@ export default function Home() {
     console.log(data);
   };
 
-  return (
-    <div className="min-h-screen bg-gray-50">
-      <Button onClick={createUser}>create user</Button>
-    </div>
-  );
+  // return (
+  //   <div className="min-h-screen bg-gray-50">
+  //     <Button onClick={createUser}>create user</Button>
+  //   </div>
+  // );
   return <Dashboard user={user} />;
 }

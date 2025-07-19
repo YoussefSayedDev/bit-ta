@@ -20,7 +20,7 @@ interface DashboardProps {
   user: User;
 }
 
-export default function Dashboard({ user }: DashboardProps) {
+export function Dashboard({ user }: DashboardProps) {
   const [activeTab, setActiveTab] = useState("problems");
   const [showProfileSettings, setShowProfileSettings] = useState(false);
 

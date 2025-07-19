@@ -31,10 +31,10 @@ import {
 
 interface ProfileSettingsProps {
   user: User;
-  onBack: () => void;
+  // onBack: () => void;
 }
 
-export function ProfileSettings({ user, onBack }: ProfileSettingsProps) {
+export function ProfileSettings({ user }: ProfileSettingsProps) {
   const [username, setUsername] = useState(user.user_metadata?.username || "");
   const [college, setCollege] = useState(user.user_metadata?.college || "");
   const [year, setYear] = useState(user.user_metadata?.year || "");
@@ -95,7 +95,7 @@ export function ProfileSettings({ user, onBack }: ProfileSettingsProps) {
             <Button
               variant="ghost"
               size="sm"
-              onClick={onBack}
+              // onClick={onBack}
               className="flex items-center space-x-2 rtl:space-x-reverse mr-4"
             >
               <ArrowLeft className="h-4 w-4" />

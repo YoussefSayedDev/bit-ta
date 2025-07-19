@@ -13,5 +13,5 @@ const user: User = {
 };
 
 export default function ProfileSettingsPage() {
-  return <ProfileSettings onBack={() => console.log("back")} user={user} />;
+  return <ProfileSettings user={user} />;
 }

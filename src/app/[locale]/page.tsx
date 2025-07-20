@@ -11,10 +11,12 @@ import {
   Users,
   Zap,
 } from "lucide-react";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function HomePage() {
+  const t = useTranslations("HomePage");
   return (
     <div
       className="min-h-screen bg-gradient-to-br from-blue-50 to-purple-50"
@@ -256,8 +258,8 @@ export default function HomePage() {
                 </div>
               </div>
               <p className="text-gray-600 leading-relaxed">
-                "المنصة ساعدتني أتعلم البرمجة من الصفر، والمجتمع كان داعم جداً.
-                دلوقتي بشتغل كمطورة في شركة تقنية كبيرة!"
+                &quot; ساعدتني أتعلم البرمجة من الصفر، والمجتمع كان داعم جداً.
+                دلوقتي بشتغل كمطورة في شركة تقنية كبيرة!&quot;
               </p>
             </Card>
 
@@ -282,8 +284,8 @@ export default function HomePage() {
                 </div>
               </div>
               <p className="text-gray-600 leading-relaxed">
-                "التحديات اليومية والمسابقات خلتني أحسن مهاراتي بسرعة. الآن عندي
-                ثقة أكبر في قدراتي البرمجية."
+                &quot;التحديات اليومية والمسابقات خلتني أحسن مهاراتي بسرعة. الآن
+                عندي ثقة أكبر في قدراتي البرمجية.&quot;
               </p>
             </Card>
 
@@ -308,8 +310,8 @@ export default function HomePage() {
                 </div>
               </div>
               <p className="text-gray-600 leading-relaxed">
-                "أفضل مكان لتعلم البرمجة! المحتوى منظم والمجتمع نشيط. حققت
-                إنجازات ما كنت أتوقعها."
+                &quot;أفضل مكان لتعلم البرمجة! المحتوى منظم والمجتمع نشيط. حققت
+                إنجازات ما كنت أتوقعها.&quot;
               </p>
             </Card>
           </div>

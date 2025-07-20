@@ -1,7 +1,11 @@
+import { routing } from "@/i18n/routing";
 import { ThemeProvider } from "@/providers/theme-provider";
 import type { Metadata } from "next";
+import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { Inter } from "next/font/google";
-import "./globals.css";
+import { notFound } from "next/navigation";
+import { ReactNode } from "react";
+import "../globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -10,11 +14,18 @@ export const metadata: Metadata = {
   description: "منصة تعليمية لتعلم البرمجة وحل المسائل",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
+  params,
 }: Readonly<{
-  children: React.ReactNode;
+  children: ReactNode;
+  params: Promise<{ locale: string }>;
 }>) {
+  // Ensure that the incoming `locale` is valid
+  const { locale } = await params;
+  if (!hasLocale(routing.locales, locale)) {
+    notFound();
+  }
   return (
     <html lang="en" dir="rtl" suppressHydrationWarning>
       <body className={inter.className}>
@@ -24,7 +35,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          <NextIntlClientProvider>{children}</NextIntlClientProvider>
         </ThemeProvider>
       </body>
     </html>

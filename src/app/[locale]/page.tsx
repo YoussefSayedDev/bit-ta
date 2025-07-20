@@ -1,6 +1,8 @@
+"use client";
 import { Header } from "@/components/layout/header";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardTitle } from "@/components/ui/card";
+import { useAuth } from "@/contexts/auth-context";
 import {
   Award,
   BookOpen,
@@ -16,6 +18,10 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function HomePage() {
+  const { user, profile } = useAuth();
+
+  console.log("user", user);
+  console.log("profile", profile);
   const t = useTranslations("HomePage");
   return (
     <div

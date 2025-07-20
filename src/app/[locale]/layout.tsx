@@ -1,3 +1,4 @@
+import { AuthProvider } from "@/contexts/auth-context";
 import { routing } from "@/i18n/routing";
 import { ThemeProvider } from "@/providers/theme-provider";
 import type { Metadata } from "next";
@@ -35,7 +36,9 @@ export default async function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <NextIntlClientProvider>{children}</NextIntlClientProvider>
+          <NextIntlClientProvider>
+            <AuthProvider>{children}</AuthProvider>
+          </NextIntlClientProvider>
         </ThemeProvider>
       </body>
     </html>
